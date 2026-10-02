@@ -1,0 +1,14 @@
+{
+  "seed": 2023,
+  "seeds": [2023, 2024],
+  "gamesPerSide": 1,
+  "maxTurns": 300,
+  "entry": [1, 8],
+  "policyConfig": {
+    "depth": 2,
+    "budget": 10,
+    "horizon": 8,
+    "maxNodes": 20000,
+    "weights": {"progress":24,"capture":90,"safety":12,"completion":180,"entry":18,"risk":-70,"mobility":10,"bonus":8}
+  }
+}

@@ -1,0 +1,630 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stochastic Decision Lab Experiment Report</title><style>body{font:14px/1.6 system-ui,sans-serif;color:#243333;background:#f4f7f8;margin:0;padding:24px}main{max-width:1250px;margin:auto}h1{font-size:28px}h2{font-size:20px;text-transform:capitalize}section{padding:20px 0;border-top:1px solid #ccd8db}.scroll{overflow:auto}table{border-collapse:collapse;background:white;width:100%;font-size:12px}th,td{padding:9px;border-bottom:1px solid #d9e2e4;text-align:left;white-space:nowrap}th{color:#527276}pre{overflow:auto;font-size:12px}a{color:#087f80}summary{cursor:pointer}p{max-width:900px}</style><main><h1>Stochastic Decision Lab Experiment Report</h1><p>Measured outputs from the Spiral 7 environment. These are small exploratory runs, not evidence of general superiority. Latency depends on this machine and changes on reruns. All configurations and raw game outcomes are linked below.</p><p><a href="../index.html">Open Decision Lab</a></p><section><h2>benchmark</h2><p>Agreement with depth-three bounded expectiminimax is a diagnostic, not an optimality or accuracy claim.</p><div class="scroll"><table><thead><tr><th>policy</th><th>agreement</th><th>latencyMs</th><th>nodes</th><th>rollouts</th><th>passed</th><th>assertions</th></tr></thead><tbody><tr><td>Random</td><td>0.58</td><td>0.07</td><td>0</td><td>0</td><td>10</td><td>10</td></tr><tr><td>Weighted heuristic</td><td>0.88</td><td>0.043</td><td>0</td><td>0</td><td>10</td><td>10</td></tr><tr><td>Probability-aware</td><td>0.94</td><td>0.041</td><td>0</td><td>0</td><td>10</td><td>10</td></tr><tr><td>Expectiminimax</td><td>0.94</td><td>0.8</td><td>41.6</td><td>0</td><td>10</td><td>10</td></tr><tr><td>Monte Carlo rollouts</td><td>0.64</td><td>4.362</td><td>152.88</td><td>22</td><td>10</td><td>10</td></tr></tbody></table></div><details><summary>Recorded configuration</summary><pre>{
+  &quot;seed&quot;: 2023,
+  &quot;reference&quot;: {
+    &quot;policy&quot;: &quot;expectiminimax&quot;,
+    &quot;depth&quot;: 3,
+    &quot;note&quot;: &quot;Agreement measures consistency with this bounded reference, not optimality&quot;
+  },
+  &quot;policies&quot;: [
+    {
+      &quot;policy&quot;: &quot;Random&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        },
+        &quot;seed&quot;: &quot;2023:benchmark:s1-1:Random&quot;
+      }
+    },
+    {
+      &quot;policy&quot;: &quot;Weighted heuristic&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        },
+        &quot;seed&quot;: &quot;2023:benchmark:s1-1:Weighted heuristic&quot;
+      }
+    },
+    {
+      &quot;policy&quot;: &quot;Probability-aware&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        },
+        &quot;seed&quot;: &quot;2023:benchmark:s1-1:Probability-aware&quot;
+      }
+    },
+    {
+      &quot;policy&quot;: &quot;Expectiminimax&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        },
+        &quot;seed&quot;: &quot;2023:benchmark:s1-1:Expectiminimax&quot;
+      }
+    },
+    {
+      &quot;policy&quot;: &quot;Monte Carlo rollouts&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        },
+        &quot;seed&quot;: &quot;2023:benchmark:s1-1:Monte Carlo rollouts&quot;
+      }
+    }
+  ]
+}</pre></details><p><a href="benchmark.json">Complete JSON</a> / <a href="benchmark.csv">Summary CSV</a></p></section><section><h2>tournament</h2><p>Win rates count unfinished games in the denominator. Intervals are descriptive game-level Wilson intervals; swapped games share seeds.</p><div class="scroll"><table><thead><tr><th>policy</th><th>games</th><th>wins</th><th>losses</th><th>unfinished</th><th>winRate</th><th>winCI</th><th>meanTurns</th><th>decisionLatencyMs</th><th>capturesPerGame</th><th>seedWinRateSD</th></tr></thead><tbody><tr><td>Random</td><td>16</td><td>2</td><td>13</td><td>1</td><td>0.125</td><td>0.035 to 0.36</td><td>200.688</td><td>0.089</td><td>2.25</td><td>0</td></tr><tr><td>Weighted heuristic</td><td>16</td><td>5</td><td>10</td><td>1</td><td>0.313</td><td>0.142 to 0.556</td><td>232.625</td><td>0.115</td><td>5</td><td>0.088</td></tr><tr><td>Probability-aware</td><td>16</td><td>10</td><td>6</td><td>0</td><td>0.625</td><td>0.386 to 0.815</td><td>216.563</td><td>0.089</td><td>6.563</td><td>0</td></tr><tr><td>Expectiminimax</td><td>16</td><td>14</td><td>2</td><td>0</td><td>0.875</td><td>0.64 to 0.965</td><td>206.25</td><td>1.275</td><td>6.188</td><td>0.177</td></tr><tr><td>Monte Carlo rollouts</td><td>16</td><td>8</td><td>8</td><td>0</td><td>0.5</td><td>0.28 to 0.72</td><td>212</td><td>4.946</td><td>4.688</td><td>0</td></tr></tbody></table></div><details><summary>Recorded configuration</summary><pre>{
+  &quot;seed&quot;: 2023,
+  &quot;seeds&quot;: [
+    2023,
+    2024
+  ],
+  &quot;gamesPerSide&quot;: 1,
+  &quot;maxTurns&quot;: 300,
+  &quot;entry&quot;: [
+    1,
+    8
+  ],
+  &quot;policyConfig&quot;: {
+    &quot;depth&quot;: 2,
+    &quot;budget&quot;: 10,
+    &quot;horizon&quot;: 8,
+    &quot;maxNodes&quot;: 20000,
+    &quot;weights&quot;: {
+      &quot;progress&quot;: 24,
+      &quot;capture&quot;: 90,
+      &quot;safety&quot;: 12,
+      &quot;completion&quot;: 180,
+      &quot;entry&quot;: 18,
+      &quot;risk&quot;: -70,
+      &quot;mobility&quot;: 10,
+      &quot;bonus&quot;: 8
+    }
+  },
+  &quot;policies&quot;: [
+    {
+      &quot;id&quot;: &quot;random&quot;,
+      &quot;label&quot;: &quot;Random&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;heuristic&quot;,
+      &quot;label&quot;: &quot;Weighted heuristic&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;risk&quot;,
+      &quot;label&quot;: &quot;Probability-aware&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;expectiminimax&quot;,
+      &quot;label&quot;: &quot;Expectiminimax&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;montecarlo&quot;,
+      &quot;label&quot;: &quot;Monte Carlo rollouts&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    }
+  ]
+}</pre></details><p><a href="tournament.json">Complete JSON</a> / <a href="tournament.csv">Summary CSV</a></p></section><section><h2>ablation</h2><p>Win rates count unfinished games in the denominator. Intervals are descriptive game-level Wilson intervals; swapped games share seeds.</p><div class="scroll"><table><thead><tr><th>policy</th><th>games</th><th>wins</th><th>losses</th><th>unfinished</th><th>winRate</th><th>winCI</th><th>meanTurns</th><th>decisionLatencyMs</th><th>capturesPerGame</th><th>seedWinRateSD</th></tr></thead><tbody><tr><td>Full probability-aware</td><td>4</td><td>3</td><td>1</td><td>0</td><td>0.75</td><td>0.301 to 0.954</td><td>240.25</td><td>0.098</td><td>7.25</td><td>0.354</td></tr><tr><td>Without safety</td><td>4</td><td>3</td><td>0</td><td>1</td><td>0.75</td><td>0.301 to 0.954</td><td>225.75</td><td>0.116</td><td>7.75</td><td>0.354</td></tr><tr><td>Without capture</td><td>4</td><td>2</td><td>2</td><td>0</td><td>0.5</td><td>0.15 to 0.85</td><td>213</td><td>0.108</td><td>4.5</td><td>0</td></tr><tr><td>Without progress</td><td>4</td><td>3</td><td>1</td><td>0</td><td>0.75</td><td>0.301 to 0.954</td><td>240.25</td><td>0.102</td><td>7.25</td><td>0.354</td></tr><tr><td>Without mobility</td><td>4</td><td>3</td><td>1</td><td>0</td><td>0.75</td><td>0.301 to 0.954</td><td>236.25</td><td>0.112</td><td>6.75</td><td>0.354</td></tr><tr><td>Without risk</td><td>4</td><td>2</td><td>2</td><td>0</td><td>0.5</td><td>0.15 to 0.85</td><td>237</td><td>0.112</td><td>6.25</td><td>0</td></tr></tbody></table></div><details><summary>Recorded configuration</summary><pre>{
+  &quot;seed&quot;: 2023,
+  &quot;seeds&quot;: [
+    2023,
+    2024
+  ],
+  &quot;gamesPerSide&quot;: 1,
+  &quot;maxTurns&quot;: 300,
+  &quot;entry&quot;: [
+    1,
+    8
+  ],
+  &quot;policyConfig&quot;: {
+    &quot;depth&quot;: 2,
+    &quot;budget&quot;: 10,
+    &quot;horizon&quot;: 8,
+    &quot;maxNodes&quot;: 20000,
+    &quot;weights&quot;: {
+      &quot;progress&quot;: 24,
+      &quot;capture&quot;: 90,
+      &quot;safety&quot;: 12,
+      &quot;completion&quot;: 180,
+      &quot;entry&quot;: 18,
+      &quot;risk&quot;: -70,
+      &quot;mobility&quot;: 10,
+      &quot;bonus&quot;: 8
+    }
+  },
+  &quot;variants&quot;: [
+    {
+      &quot;id&quot;: &quot;risk&quot;,
+      &quot;label&quot;: &quot;Full probability-aware&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;risk&quot;,
+      &quot;label&quot;: &quot;Without safety&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 0,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;risk&quot;,
+      &quot;label&quot;: &quot;Without capture&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 0,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;risk&quot;,
+      &quot;label&quot;: &quot;Without progress&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 0,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;risk&quot;,
+      &quot;label&quot;: &quot;Without mobility&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 0,
+          &quot;bonus&quot;: 8
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;risk&quot;,
+      &quot;label&quot;: &quot;Without risk&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: 0,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    }
+  ]
+}</pre></details><p><a href="ablation.json">Complete JSON</a> / <a href="ablation.csv">Summary CSV</a></p></section><section><h2>depth</h2><p>Win rates count unfinished games in the denominator. Intervals are descriptive game-level Wilson intervals; swapped games share seeds.</p><div class="scroll"><table><thead><tr><th>policy</th><th>games</th><th>wins</th><th>losses</th><th>unfinished</th><th>winRate</th><th>winCI</th><th>meanTurns</th><th>decisionLatencyMs</th><th>capturesPerGame</th><th>seedWinRateSD</th><th>referenceAgreement</th><th>scenarioNodes</th></tr></thead><tbody><tr><td>Depth 1</td><td>4</td><td>3</td><td>1</td><td>0</td><td>0.75</td><td>0.301 to 0.954</td><td>200.25</td><td>0.209</td><td>5</td><td>0.354</td><td>0.84</td><td>2.2</td></tr><tr><td>Depth 2</td><td>4</td><td>3</td><td>1</td><td>0</td><td>0.75</td><td>0.301 to 0.954</td><td>240.5</td><td>1.561</td><td>8</td><td>0.354</td><td>0.94</td><td>41.6</td></tr><tr><td>Depth 3</td><td>4</td><td>3</td><td>1</td><td>0</td><td>0.75</td><td>0.301 to 0.954</td><td>220.25</td><td>19.224</td><td>4.75</td><td>0.354</td><td>1</td><td>614.3</td></tr></tbody></table></div><details><summary>Recorded configuration</summary><pre>{
+  &quot;seed&quot;: 2023,
+  &quot;seeds&quot;: [
+    2023,
+    2024
+  ],
+  &quot;gamesPerSide&quot;: 1,
+  &quot;maxTurns&quot;: 300,
+  &quot;entry&quot;: [
+    1,
+    8
+  ],
+  &quot;policyConfig&quot;: {
+    &quot;depth&quot;: 2,
+    &quot;budget&quot;: 10,
+    &quot;horizon&quot;: 8,
+    &quot;maxNodes&quot;: 20000,
+    &quot;weights&quot;: {
+      &quot;progress&quot;: 24,
+      &quot;capture&quot;: 90,
+      &quot;safety&quot;: 12,
+      &quot;completion&quot;: 180,
+      &quot;entry&quot;: 18,
+      &quot;risk&quot;: -70,
+      &quot;mobility&quot;: 10,
+      &quot;bonus&quot;: 8
+    }
+  },
+  &quot;variants&quot;: [
+    {
+      &quot;id&quot;: &quot;expectiminimax&quot;,
+      &quot;label&quot;: &quot;Depth 1&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 1,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;expectiminimax&quot;,
+      &quot;label&quot;: &quot;Depth 2&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;expectiminimax&quot;,
+      &quot;label&quot;: &quot;Depth 3&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 3,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    }
+  ]
+}</pre></details><p><a href="depth.json">Complete JSON</a> / <a href="depth.csv">Summary CSV</a></p></section><section><h2>budget</h2><p>Win rates count unfinished games in the denominator. Intervals are descriptive game-level Wilson intervals; swapped games share seeds.</p><div class="scroll"><table><thead><tr><th>policy</th><th>games</th><th>wins</th><th>losses</th><th>unfinished</th><th>winRate</th><th>winCI</th><th>meanTurns</th><th>decisionLatencyMs</th><th>capturesPerGame</th><th>seedWinRateSD</th></tr></thead><tbody><tr><td>Budget 10</td><td>4</td><td>2</td><td>2</td><td>0</td><td>0.5</td><td>0.15 to 0.85</td><td>222.75</td><td>5.988</td><td>5.75</td><td>0</td></tr><tr><td>Budget 50</td><td>4</td><td>2</td><td>2</td><td>0</td><td>0.5</td><td>0.15 to 0.85</td><td>224.25</td><td>23.811</td><td>5.5</td><td>0</td></tr><tr><td>Budget 100</td><td>4</td><td>3</td><td>0</td><td>1</td><td>0.75</td><td>0.301 to 0.954</td><td>232.5</td><td>41.621</td><td>7</td><td>0.354</td></tr><tr><td>Budget 250</td><td>4</td><td>3</td><td>1</td><td>0</td><td>0.75</td><td>0.301 to 0.954</td><td>183.5</td><td>116.062</td><td>4.25</td><td>0.354</td></tr><tr><td>Budget 500</td><td>4</td><td>1</td><td>3</td><td>0</td><td>0.25</td><td>0.046 to 0.699</td><td>185.25</td><td>261.097</td><td>3</td><td>0.354</td></tr><tr><td>Budget 1000</td><td>4</td><td>3</td><td>1</td><td>0</td><td>0.75</td><td>0.301 to 0.954</td><td>200.25</td><td>517.797</td><td>4.5</td><td>0.354</td></tr></tbody></table></div><details><summary>Recorded configuration</summary><pre>{
+  &quot;seed&quot;: 2023,
+  &quot;seeds&quot;: [
+    2023,
+    2024
+  ],
+  &quot;gamesPerSide&quot;: 1,
+  &quot;maxTurns&quot;: 300,
+  &quot;entry&quot;: [
+    1,
+    8
+  ],
+  &quot;policyConfig&quot;: {
+    &quot;depth&quot;: 2,
+    &quot;budget&quot;: 10,
+    &quot;horizon&quot;: 8,
+    &quot;maxNodes&quot;: 20000,
+    &quot;weights&quot;: {
+      &quot;progress&quot;: 24,
+      &quot;capture&quot;: 90,
+      &quot;safety&quot;: 12,
+      &quot;completion&quot;: 180,
+      &quot;entry&quot;: 18,
+      &quot;risk&quot;: -70,
+      &quot;mobility&quot;: 10,
+      &quot;bonus&quot;: 8
+    }
+  },
+  &quot;variants&quot;: [
+    {
+      &quot;id&quot;: &quot;montecarlo&quot;,
+      &quot;label&quot;: &quot;Budget 10&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 10,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;montecarlo&quot;,
+      &quot;label&quot;: &quot;Budget 50&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 50,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;montecarlo&quot;,
+      &quot;label&quot;: &quot;Budget 100&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 100,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;montecarlo&quot;,
+      &quot;label&quot;: &quot;Budget 250&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 250,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;montecarlo&quot;,
+      &quot;label&quot;: &quot;Budget 500&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 500,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    },
+    {
+      &quot;id&quot;: &quot;montecarlo&quot;,
+      &quot;label&quot;: &quot;Budget 1000&quot;,
+      &quot;config&quot;: {
+        &quot;depth&quot;: 2,
+        &quot;budget&quot;: 1000,
+        &quot;horizon&quot;: 8,
+        &quot;maxNodes&quot;: 20000,
+        &quot;weights&quot;: {
+          &quot;progress&quot;: 24,
+          &quot;capture&quot;: 90,
+          &quot;safety&quot;: 12,
+          &quot;completion&quot;: 180,
+          &quot;entry&quot;: 18,
+          &quot;risk&quot;: -70,
+          &quot;mobility&quot;: 10,
+          &quot;bonus&quot;: 8
+        }
+      }
+    }
+  ]
+}</pre></details><p><a href="budget.json">Complete JSON</a> / <a href="budget.csv">Summary CSV</a></p></section><section><h2>Interpretation</h2><p>The benchmark contains 50 curated legal positions in ten tactical categories. It includes forced-action and immediate-win checks, but is not a representative random sample of reachable gameplay states. Tournament rates depend on the opponent mix, entry rule, horizon and seeds. The budget study holds the greedy rollout policy and eight-turn cutoff constant. Increasing the sample count need not improve performance against this opponent when rollout or cutoff bias dominates.</p><p>Feature ablations disable one weight at a time without retuning. The studies use a fixed heuristic opponent with swapped starting positions. Use a larger held-out configuration before reporting comparative performance on a resume or in a research claim.</p></section></main></html>

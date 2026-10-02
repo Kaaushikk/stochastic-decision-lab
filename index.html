@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Stochastic Decision Lab</title><link rel="stylesheet" href="styles.css" /></head>
+<body><main class="app">
+  <header class="header"><div><p class="eyebrow">Game AI / Simulation / Evaluation</p><h1>Stochastic Decision Lab</h1></div><div class="header-actions"><span class="version">Ashta Chamma / Spiral 7</span><button id="rulesButton" class="secondary">Rules</button></div></header>
+  <nav class="tabs" aria-label="Workspace"><button class="active" data-tab="play" aria-selected="true">Play</button><button data-tab="lab" aria-selected="false">Experiments</button><button data-tab="results" aria-selected="false">Results <span id="resultCount">0</span></button></nav>
+  <section id="playView" class="view"><div class="layout">
+    <aside class="controls">
+      <section class="turn-card human-turn" id="turnCard" aria-live="polite"><span id="turnLabel">Your turn</span><strong id="phaseTitle">Roll the shells</strong><p id="turnHint">Roll to see your available moves.</p></section>
+      <section class="roll-panel"><span class="panel-label">Cowrie result</span><div class="roll-result"><strong id="rollValue">-</strong><div><b id="rollName">Waiting</b><p id="rollDetail">Four shells, five possible values.</p></div></div></section>
+      <div class="cowries" id="cowries" aria-label="Four cowrie shells"><span></span><span></span><span></span><span></span></div>
+      <button id="rollButton" class="primary">Roll Cowries</button>
+      <div class="field"><label for="aiModel">Opponent policy</label><select id="aiModel"><option value="heuristic">Weighted heuristic</option><option value="risk">Probability-aware</option><option value="expectiminimax">Expectiminimax</option><option value="montecarlo">Monte Carlo rollouts</option><option value="random">Random baseline</option></select></div>
+      <div class="field"><label for="gameSeed">Game seed</label><input id="gameSeed" type="number" value="2023" min="0" max="4294967295" step="1" /></div>
+      <div class="field"><label for="entryRule">Entry rule</label><select id="entryRule"><option value="1,8">1 or 8</option><option value="4,8">4 or 8</option></select></div>
+      <details class="settings"><summary>Policy settings</summary><div class="field"><label for="searchDepth">Search depth</label><select id="searchDepth"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div><div class="field"><label for="rolloutBudget">Rollouts per action</label><input id="rolloutBudget" type="number" min="1" max="1000" value="50" /></div><div class="field"><label for="rolloutHorizon">Rollout turn limit</label><input id="rolloutHorizon" type="number" min="1" max="200" value="24" /></div></details>
+      <button id="newGameButton" class="secondary">New Game</button>
+    </aside>
+    <section class="board-zone" id="boardZone"><div class="board-heading"><p id="boardMessage" aria-live="polite">You play teal. AI plays rose.</p><div class="legend"><span><i class="human-dot"></i>You <b id="humanHome">0</b>/4 home</span><span><i class="ai-dot"></i>AI <b id="aiHome">0</b>/4 home</span></div></div><div class="board" id="board" aria-label="Ashta Chamma game board"></div><div class="board-footer"><span id="gameTurns">Turn 1</span><span>4 or 8 / capture = bonus turn</span></div></section>
+    <aside class="side-info"><section class="ai-panel"><h2>Last AI decision</h2><p id="aiThought">Waiting for the first AI move.</p><div class="metrics"><div><span>Time</span><strong id="decisionTime">-</strong></div><div><span>Nodes</span><strong id="decisionNodes">0</strong></div><div><span>Rollouts</span><strong id="decisionRollouts">0</strong></div><div><span>Depth</span><strong id="decisionDepth">-</strong></div></div><div class="table-wrap"><table><thead><tr><th>Piece</th><th>Action</th><th>Value</th></tr></thead><tbody id="decisionTrace"><tr><td colspan="3">No decision yet.</td></tr></tbody></table></div><p id="traceDetail" class="muted"></p><div id="featureVector" class="feature-list"></div><button id="exportTrace" class="secondary" disabled>Export Decision</button></section><section class="history-panel"><h2>Move history</h2><ol id="history"></ol></section></aside>
+  </div></section>
+  <section id="labView" class="view" hidden>
+    <div class="section-heading"><div><h2>Experiment Runner</h2><p class="muted">Seeded games and controlled legal positions</p></div><span class="badge">5 policies / 50 scenarios</span></div>
+    <div class="experiment-layout"><aside class="experiment-controls">
+      <div class="field"><label for="experimentKind">Experiment</label><select id="experimentKind"><option value="benchmark">50-position benchmark</option><option value="tournament">Round-robin tournament</option><option value="ablation">Feature ablation</option><option value="depth">Search-depth study</option><option value="budget">Rollout-budget study</option></select></div>
+      <div class="field"><label for="experimentSeed">Base seed</label><input id="experimentSeed" type="number" min="0" max="4294967294" value="2023" /></div>
+      <div class="field"><label for="seedCount">Number of seeds</label><input id="seedCount" type="number" min="1" max="100" value="2" /></div>
+      <div class="field"><label for="gamesPerSide">Games per side / seed</label><input id="gamesPerSide" type="number" min="1" max="50" value="1" /></div>
+      <div class="field"><label for="maxTurns">Maximum game turns</label><input id="maxTurns" type="number" min="20" max="2000" value="300" /></div>
+      <div class="field"><label for="experimentBudget">Rollouts per action</label><input id="experimentBudget" type="number" min="1" max="1000" value="10" /></div>
+      <div class="field"><label for="experimentHorizon">Rollout turn limit</label><input id="experimentHorizon" type="number" min="1" max="200" value="8" /></div>
+      <details class="settings"><summary>Heuristic weights</summary><div id="weightInputs"></div></details>
+      <button id="runExperiment" class="primary">Run Experiment</button><button id="cancelExperiment" class="secondary" disabled>Cancel</button><div class="progress-area" aria-live="polite"><progress id="experimentProgress" value="0" max="1"></progress><p id="experimentStatus">Ready.</p></div>
+    </aside><div class="experiment-main">
+      <div class="section-heading"><h2>Controlled Positions</h2><div class="field inline"><label for="scenarioSelect">Scenario</label><select id="scenarioSelect"></select></div></div>
+      <div class="scenario-layout"><div><div class="mini-board" id="scenarioBoard"></div><p id="scenarioMeta" class="muted"></p></div><div><div class="section-heading"><h2>Policy Comparison</h2><button id="compareScenario" class="secondary">Compare</button></div><div class="table-wrap"><table><thead><tr><th>Policy</th><th>Selected</th><th>Value</th><th>Time</th></tr></thead><tbody id="scenarioComparison"></tbody></table></div><p class="muted" id="scenarioComparisonNote"></p><div id="scenarioDetails"></div></div></div>
+      <div class="section-heading"><h2>Decision Replay</h2><select id="replaySelect" aria-label="Saved decision"><option value="">No saved decisions</option></select></div><div id="replayDetail" class="muted">No saved decisions.</div>
+    </div></div>
+  </section>
+  <section id="resultsView" class="view" hidden>
+    <div class="section-heading"><div><h2>Experiment Results</h2><p id="resultMeta" class="muted">No completed experiment selected.</p></div><div class="result-actions"><select id="resultSelect" aria-label="Saved experiment"></select><button id="loadReport" class="secondary">Load Saved Runs</button><button id="exportJSON" class="secondary" disabled>Export JSON</button><button id="exportCSV" class="secondary" disabled>Export CSV</button></div></div>
+    <div id="resultChart" class="bar-chart"></div><div class="table-wrap" id="resultTable"></div><p id="resultNotes" class="muted">Completed browser experiments are saved on this device.</p>
+  </section>
+  <footer class="footer">Stochastic Decision Lab <span>Classical AI / seeded simulation / reproducible evaluation</span></footer>
+</main>
+<dialog id="rulesDialog"><div class="section-heading"><h2>Spiral 7 Rules</h2><button id="closeRules" class="secondary">Close</button></div><p>Two players, four pieces each. This prototype uses a custom 7 x 7 spiral variant with opposite starting squares.</p><ul><li>Four fair binary shells give 1, 2, 3, 4 mouth-up faces; zero mouth-up faces count as 8.</li><li>A qualifying entry roll places a reserve piece on its start square. It does not advance that piece further.</li><li>One piece moves per roll. Pieces follow their own rotated 48-square route; an exact roll is required to reach the center.</li><li>Marked safe squares protect all pieces. On other squares, landing captures all opposing pieces there; stacking provides no additional protection.</li><li>A roll of 4 or 8, or a capture, grants another turn. A bonus roll still grants a turn when no move is available.</li><li>No capture is required to enter the inner track. First player to bring all four pieces home wins.</li></ul><p class="muted">Experiments stop at their configured turn limit and record unfinished games separately. Physical shell bias and other regional rule variants are outside this version.</p></dialog>
+<script src="engine.js"></script><script src="policies.js"></script><script src="evaluation.js"></script><script src="results/saved-runs.js"></script><script src="app.js"></script>
+</body></html>

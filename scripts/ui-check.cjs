@@ -1,0 +1,48 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const {chromium}=require(process.env.ASHTA_PLAYWRIGHT || 'playwright');
+const E=require('../engine.js');
+const root=path.resolve(__dirname,'..'),output=path.join(root,'qa');fs.mkdirSync(output,{recursive:true});
+let activeBrowser;
+(async()=>{
+  const browser=activeBrowser=await chromium.launch({headless:true,channel:process.env.ASHTA_BROWSER || 'chrome'});
+  const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];
+  page.on('pageerror',e=>errors.push(e.message));
+  await page.goto('http://127.0.0.1:4173');
+  assert.equal(await page.locator('#board .cell').count(),49);assert.equal(await page.locator('#board .token').count(),8);
+  await page.screenshot({path:path.join(output,'desktop-play.png'),fullPage:true});
+  let seed=0;
+  for(;seed<1000;seed++){let s=E.roll(E.reset(seed));if(s.lastRoll!==1)continue;s=E.step(s,0);s=E.roll(s);if(s.lastRoll===1)break;}
+  await page.locator('#gameSeed').fill(String(seed));await page.locator('#newGameButton').click();
+  await page.locator('#rollButton').click();await page.waitForTimeout(150);
+  assert(await page.locator('#cowries').evaluate(el=>el.classList.contains('rolling')));
+  await page.locator('#board .selectable').first().waitFor();assert.equal(await page.locator('#rollValue').innerText(),'1');
+  assert.equal(await page.locator('#cowries .up').count(),1);
+  const beforeComparison=await page.evaluate(()=>JSON.stringify(game));await page.locator('#compareCurrentPosition').click();assert.equal(await page.locator('#scenarioComparison tr').count(),5);assert.equal(await page.evaluate(()=>JSON.stringify(game)),beforeComparison);await page.locator('[data-tab="play"]').click();
+  await page.locator('#board .selectable').first().click();
+  await page.waitForFunction(()=>document.querySelector('#aiThought').textContent.includes('chose'),{timeout:10000});
+  await page.waitForFunction(()=>!document.querySelector('#rollButton').disabled,{timeout:10000});
+  assert(await page.locator('#decisionTrace tr').count()>0);
+  await page.screenshot({path:path.join(output,'desktop-decision.png'),fullPage:true});
+  await page.locator('[data-tab="lab"]').click();await page.locator('#compareScenario').click();assert.equal(await page.locator('#scenarioComparison tr').count(),5);
+  await page.locator('#scenarioComparison tr').nth(3).click();assert(await page.locator('#scenarioDetails .feature-row').count()>0);
+  await page.screenshot({path:path.join(output,'desktop-experiments.png'),fullPage:true});
+  await page.getByRole('button',{name:'Replay Selected Move',exact:true}).click();assert((await page.locator('#replayDetail p').innerText()).startsWith('After'));
+  await page.locator('#experimentBudget').fill('2');await page.locator('#experimentHorizon').fill('3');await page.locator('#runExperiment').click();
+  await page.waitForFunction(()=>!document.querySelector('#resultsView').hidden,{timeout:30000});assert.equal(await page.locator('#resultTable tbody tr').count(),5);
+  const downloadPromise=page.waitForEvent('download');await page.locator('#exportCSV').click();const download=await downloadPromise;await download.saveAs(path.join(output,'ui-export.csv'));assert(fs.readFileSync(path.join(output,'ui-export.csv'),'utf8').includes('agreement'));
+  await page.screenshot({path:path.join(output,'desktop-results.png'),fullPage:true});
+  await page.reload();assert.equal(await page.locator('#resultCount').innerText(),'1');
+  await page.locator('#rulesButton').click();assert(await page.locator('#rulesDialog').isVisible());await page.locator('#closeRules').click();
+  await page.locator('#rollButton').click();await page.locator('#newGameButton').click();await page.waitForTimeout(1500);
+  assert.equal(await page.locator('#rollValue').innerText(),'-');assert.equal(await page.evaluate(()=>game.turns),0);assert.equal(await page.locator('#board .token').count(),8);
+  await page.locator('[data-tab="lab"]').click();await page.locator('#experimentKind').selectOption('budget');await page.locator('#runExperiment').click();await page.locator('#cancelExperiment').click();await page.waitForTimeout(200);assert.equal(await page.locator('#resultCount').innerText(),'1');assert((await page.locator('#experimentStatus').innerText()).includes('Cancelled'),await page.locator('#experimentStatus').innerText());
+  await page.setViewportSize({width:390,height:844});
+  for(const view of ['play','lab','results']){await page.locator(`[data-tab="${view}"]`).click();await page.screenshot({path:path.join(output,`mobile-${view}.png`),fullPage:true});const overflow=await page.evaluate(()=>[...document.querySelectorAll('body *')].filter(el=>el.getBoundingClientRect().right>innerWidth+1 && el.getBoundingClientRect().width>0).map(el=>({tag:el.tagName,id:el.id,class:el.className,right:el.getBoundingClientRect().right,width:el.getBoundingClientRect().width})).slice(0,12));assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`${view} mobile horizontal overflow: ${JSON.stringify(overflow)}`);}
+  await page.locator('#loadReport').click();await page.waitForFunction(()=>Number(document.querySelector('#resultCount').textContent)>=6);assert.equal(await page.locator('#resultSelect option').count(),6);
+  await page.setViewportSize({width:1440,height:1000});await page.screenshot({path:path.join(output,'saved-results.png'),fullPage:true});
+  await page.goto('http://127.0.0.1:4173/results/report.html');assert.equal(await page.locator('table').count(),5);await page.screenshot({path:path.join(output,'report.png'),fullPage:true});
+  const filePage=await browser.newPage();filePage.on('pageerror',e=>errors.push(e.message));await filePage.goto('file:///'+root.replace(/\\/g,'/')+'/index.html');assert.equal(await filePage.locator('#board .cell').count(),49);
+  await filePage.locator('[data-tab="lab"]').click();await filePage.locator('#experimentBudget').fill('1');await filePage.locator('#experimentHorizon').fill('1');await filePage.locator('#runExperiment').click();await filePage.waitForFunction(()=>!document.querySelector('#resultsView').hidden,{timeout:30000});
+  await filePage.locator('#loadReport').click();assert.equal(await filePage.locator('#resultSelect option').count(),6);
+  assert.equal(errors.length,0,errors.join('\n'));await browser.close();console.log('UI checks passed: gameplay, animations, decision traces, scenarios, experiments, exports, reset cancellation, persistence, mobile layout, direct-file mode.');
+})().catch(async error=>{console.error(error);if(activeBrowser)await activeBrowser.close();process.exitCode=1;});

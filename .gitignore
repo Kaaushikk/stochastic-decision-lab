@@ -1,0 +1,7 @@
+node_modules/
+.tools/
+qa/
+*.log
+.server.pid
+.codex-remote-attachments/
+umass_mscs_2026_job_roadmap.md

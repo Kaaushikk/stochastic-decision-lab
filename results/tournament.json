@@ -1,0 +1,5443 @@
+{
+  "environment": "spiral-7-v1",
+  "kind": "tournament",
+  "configuration": {
+    "seed": 2023,
+    "seeds": [
+      2023,
+      2024
+    ],
+    "gamesPerSide": 1,
+    "maxTurns": 300,
+    "entry": [
+      1,
+      8
+    ],
+    "policyConfig": {
+      "depth": 2,
+      "budget": 10,
+      "horizon": 8,
+      "maxNodes": 20000,
+      "weights": {
+        "progress": 24,
+        "capture": 90,
+        "safety": 12,
+        "completion": 180,
+        "entry": 18,
+        "risk": -70,
+        "mobility": 10,
+        "bonus": 8
+      }
+    },
+    "policies": [
+      {
+        "id": "random",
+        "label": "Random",
+        "config": {
+          "depth": 2,
+          "budget": 10,
+          "horizon": 8,
+          "maxNodes": 20000,
+          "weights": {
+            "progress": 24,
+            "capture": 90,
+            "safety": 12,
+            "completion": 180,
+            "entry": 18,
+            "risk": -70,
+            "mobility": 10,
+            "bonus": 8
+          }
+        }
+      },
+      {
+        "id": "heuristic",
+        "label": "Weighted heuristic",
+        "config": {
+          "depth": 2,
+          "budget": 10,
+          "horizon": 8,
+          "maxNodes": 20000,
+          "weights": {
+            "progress": 24,
+            "capture": 90,
+            "safety": 12,
+            "completion": 180,
+            "entry": 18,
+            "risk": -70,
+            "mobility": 10,
+            "bonus": 8
+          }
+        }
+      },
+      {
+        "id": "risk",
+        "label": "Probability-aware",
+        "config": {
+          "depth": 2,
+          "budget": 10,
+          "horizon": 8,
+          "maxNodes": 20000,
+          "weights": {
+            "progress": 24,
+            "capture": 90,
+            "safety": 12,
+            "completion": 180,
+            "entry": 18,
+            "risk": -70,
+            "mobility": 10,
+            "bonus": 8
+          }
+        }
+      },
+      {
+        "id": "expectiminimax",
+        "label": "Expectiminimax",
+        "config": {
+          "depth": 2,
+          "budget": 10,
+          "horizon": 8,
+          "maxNodes": 20000,
+          "weights": {
+            "progress": 24,
+            "capture": 90,
+            "safety": 12,
+            "completion": 180,
+            "entry": 18,
+            "risk": -70,
+            "mobility": 10,
+            "bonus": 8
+          }
+        }
+      },
+      {
+        "id": "montecarlo",
+        "label": "Monte Carlo rollouts",
+        "config": {
+          "depth": 2,
+          "budget": 10,
+          "horizon": 8,
+          "maxNodes": 20000,
+          "weights": {
+            "progress": 24,
+            "capture": 90,
+            "safety": 12,
+            "completion": 180,
+            "entry": 18,
+            "risk": -70,
+            "mobility": 10,
+            "bonus": 8
+          }
+        }
+      }
+    ]
+  },
+  "games": [
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "random",
+          "label": "Random",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "heuristic",
+          "label": "Weighted heuristic",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Random",
+      "unfinished": false,
+      "turns": 181,
+      "captures": [
+        5,
+        3
+      ],
+      "completed": [
+        4,
+        1
+      ],
+      "decisions": [
+        93,
+        85
+      ],
+      "latencyMs": [
+        0.07705591397847632,
+        0.10722823529413023
+      ],
+      "nodes": [
+        0,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.182795698924731,
+        2.9176470588235293
+      ],
+      "safeLandings": [
+        14,
+        15
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            48,
+            21,
+            0,
+            0
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          false,
+          false,
+          true
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 762950362,
+        "seed": 1854196214,
+        "turns": 181,
+        "captures": [
+          5,
+          3
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "heuristic",
+          "label": "Weighted heuristic",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "random",
+          "label": "Random",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": null,
+      "winnerPolicy": null,
+      "unfinished": true,
+      "turns": 300,
+      "captures": [
+        12,
+        9
+      ],
+      "completed": [
+        3,
+        2
+      ],
+      "decisions": [
+        144,
+        154
+      ],
+      "latencyMs": [
+        0.16235486111111186,
+        0.14893831168831184
+      ],
+      "nodes": [
+        0,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.9097222222222223,
+        2.9155844155844157
+      ],
+      "safeLandings": [
+        38,
+        34
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            8
+          ],
+          [
+            48,
+            48,
+            11,
+            18
+          ]
+        ],
+        "turn": 1,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          true,
+          false,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 709916262,
+        "seed": 1854196214,
+        "turns": 300,
+        "captures": [
+          12,
+          9
+        ],
+        "terminal": null
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "random",
+          "label": "Random",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "heuristic",
+          "label": "Weighted heuristic",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Random",
+      "unfinished": false,
+      "turns": 218,
+      "captures": [
+        2,
+        2
+      ],
+      "completed": [
+        4,
+        3
+      ],
+      "decisions": [
+        109,
+        95
+      ],
+      "latencyMs": [
+        0.09735504587156522,
+        0.10317473684210295
+      ],
+      "nodes": [
+        0,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.403669724770642,
+        2.4105263157894736
+      ],
+      "safeLandings": [
+        23,
+        21
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            48,
+            48,
+            48,
+            0
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          true,
+          false,
+          false,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 1791427251,
+        "seed": 2393872427,
+        "turns": 218,
+        "captures": [
+          2,
+          2
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "heuristic",
+          "label": "Weighted heuristic",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "random",
+          "label": "Random",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Weighted heuristic",
+      "unfinished": false,
+      "turns": 209,
+      "captures": [
+        6,
+        3
+      ],
+      "completed": [
+        4,
+        0
+      ],
+      "decisions": [
+        105,
+        97
+      ],
+      "latencyMs": [
+        0.15563238095239632,
+        0.14833402061856657
+      ],
+      "nodes": [
+        0,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        3.104761904761905,
+        3.1237113402061856
+      ],
+      "safeLandings": [
+        25,
+        25
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            30,
+            30,
+            0,
+            8
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 2,
+        "shells": [
+          true,
+          false,
+          false,
+          true
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 279567423,
+        "seed": 2393872427,
+        "turns": 209,
+        "captures": [
+          6,
+          3
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "random",
+          "label": "Random",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "risk",
+          "label": "Probability-aware",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 1,
+      "winnerPolicy": "Probability-aware",
+      "unfinished": false,
+      "turns": 203,
+      "captures": [
+        3,
+        9
+      ],
+      "completed": [
+        0,
+        4
+      ],
+      "decisions": [
+        99,
+        101
+      ],
+      "latencyMs": [
+        0.15791515151515956,
+        0.10165742574258504
+      ],
+      "nodes": [
+        0,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        3.4444444444444446,
+        2.237623762376238
+      ],
+      "safeLandings": [
+        20,
+        22
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            2,
+            -1,
+            -1,
+            27
+          ],
+          [
+            48,
+            48,
+            48,
+            48
+          ]
+        ],
+        "turn": 1,
+        "roll": null,
+        "lastRoll": 4,
+        "shells": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 3026951954,
+        "seed": 1854196214,
+        "turns": 203,
+        "captures": [
+          3,
+          9
+        ],
+        "terminal": 1
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "risk",
+          "label": "Probability-aware",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "random",
+          "label": "Random",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Probability-aware",
+      "unfinished": false,
+      "turns": 201,
+      "captures": [
+        9,
+        2
+      ],
+      "completed": [
+        4,
+        1
+      ],
+      "decisions": [
+        98,
+        92
+      ],
+      "latencyMs": [
+        0.1048816326530604,
+        0.07181956521738
+      ],
+      "nodes": [
+        0,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.5816326530612246,
+        2.4456521739130435
+      ],
+      "safeLandings": [
+        25,
+        27
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            37,
+            48,
+            10,
+            26
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          false,
+          true,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 1259327338,
+        "seed": 1854196214,
+        "turns": 201,
+        "captures": [
+          9,
+          2
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "random",
+          "label": "Random",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "risk",
+          "label": "Probability-aware",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 1,
+      "winnerPolicy": "Probability-aware",
+      "unfinished": false,
+      "turns": 181,
+      "captures": [
+        0,
+        6
+      ],
+      "completed": [
+        0,
+        4
+      ],
+      "decisions": [
+        85,
+        76
+      ],
+      "latencyMs": [
+        0.05139058823529012,
+        0.08087105263158371
+      ],
+      "nodes": [
+        0,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.4,
+        3
+      ],
+      "safeLandings": [
+        18,
+        13
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            -1,
+            10,
+            2,
+            24
+          ],
+          [
+            48,
+            48,
+            48,
+            48
+          ]
+        ],
+        "turn": 1,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          true,
+          false,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 1302626575,
+        "seed": 2393872427,
+        "turns": 181,
+        "captures": [
+          0,
+          6
+        ],
+        "terminal": 1
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "risk",
+          "label": "Probability-aware",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "random",
+          "label": "Random",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Probability-aware",
+      "unfinished": false,
+      "turns": 161,
+      "captures": [
+        9,
+        1
+      ],
+      "completed": [
+        4,
+        0
+      ],
+      "decisions": [
+        84,
+        66
+      ],
+      "latencyMs": [
+        0.11551904761905094,
+        0.12567878787880352
+      ],
+      "nodes": [
+        0,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.8452380952380953,
+        2.5757575757575757
+      ],
+      "safeLandings": [
+        23,
+        18
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            3,
+            2,
+            34,
+            -1
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 2,
+        "shells": [
+          false,
+          false,
+          true,
+          true
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 806249599,
+        "seed": 2393872427,
+        "turns": 161,
+        "captures": [
+          9,
+          1
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "random",
+          "label": "Random",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "expectiminimax",
+          "label": "Expectiminimax",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 1,
+      "winnerPolicy": "Expectiminimax",
+      "unfinished": false,
+      "turns": 212,
+      "captures": [
+        3,
+        7
+      ],
+      "completed": [
+        1,
+        4
+      ],
+      "decisions": [
+        102,
+        104
+      ],
+      "latencyMs": [
+        0.06348725490198269,
+        0.9169548076923141
+      ],
+      "nodes": [
+        0,
+        4735
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.5294117647058822,
+        2.4326923076923075
+      ],
+      "safeLandings": [
+        21,
+        20
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            13,
+            -1,
+            41,
+            48
+          ],
+          [
+            48,
+            48,
+            48,
+            48
+          ]
+        ],
+        "turn": 1,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          false,
+          true,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 243844486,
+        "seed": 1854196214,
+        "turns": 212,
+        "captures": [
+          3,
+          7
+        ],
+        "terminal": 1
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "expectiminimax",
+          "label": "Expectiminimax",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "random",
+          "label": "Random",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Expectiminimax",
+      "unfinished": false,
+      "turns": 123,
+      "captures": [
+        4,
+        0
+      ],
+      "completed": [
+        4,
+        0
+      ],
+      "decisions": [
+        67,
+        53
+      ],
+      "latencyMs": [
+        1.311876119403006,
+        0.06495283018869846
+      ],
+      "nodes": [
+        4066,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        3.029850746268657,
+        2.5283018867924527
+      ],
+      "safeLandings": [
+        16,
+        13
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            19,
+            -1,
+            1,
+            22
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 2,
+        "shells": [
+          true,
+          false,
+          false,
+          true
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 1041444050,
+        "seed": 1854196214,
+        "turns": 123,
+        "captures": [
+          4,
+          0
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "random",
+          "label": "Random",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "expectiminimax",
+          "label": "Expectiminimax",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 1,
+      "winnerPolicy": "Expectiminimax",
+      "unfinished": false,
+      "turns": 186,
+      "captures": [
+        1,
+        5
+      ],
+      "completed": [
+        1,
+        4
+      ],
+      "decisions": [
+        91,
+        87
+      ],
+      "latencyMs": [
+        0.05424615384617937,
+        1.0560494252873813
+      ],
+      "nodes": [
+        0,
+        4481
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.1648351648351647,
+        2.793103448275862
+      ],
+      "safeLandings": [
+        19,
+        15
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            13,
+            40,
+            13,
+            48
+          ],
+          [
+            48,
+            48,
+            48,
+            48
+          ]
+        ],
+        "turn": 1,
+        "roll": null,
+        "lastRoll": 2,
+        "shells": [
+          false,
+          true,
+          false,
+          true
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 3574204467,
+        "seed": 2393872427,
+        "turns": 186,
+        "captures": [
+          1,
+          5
+        ],
+        "terminal": 1
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "expectiminimax",
+          "label": "Expectiminimax",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "random",
+          "label": "Random",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Expectiminimax",
+      "unfinished": false,
+      "turns": 204,
+      "captures": [
+        5,
+        1
+      ],
+      "completed": [
+        4,
+        1
+      ],
+      "decisions": [
+        99,
+        92
+      ],
+      "latencyMs": [
+        0.8779040404040303,
+        0.0480739130434467
+      ],
+      "nodes": [
+        5019,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.7373737373737375,
+        2.2282608695652173
+      ],
+      "safeLandings": [
+        23,
+        20
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            48,
+            28,
+            11,
+            36
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          true,
+          false,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 2302956827,
+        "seed": 2393872427,
+        "turns": 204,
+        "captures": [
+          5,
+          1
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "random",
+          "label": "Random",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "montecarlo",
+          "label": "Monte Carlo rollouts",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 1,
+      "winnerPolicy": "Monte Carlo rollouts",
+      "unfinished": false,
+      "turns": 194,
+      "captures": [
+        1,
+        6
+      ],
+      "completed": [
+        0,
+        4
+      ],
+      "decisions": [
+        97,
+        90
+      ],
+      "latencyMs": [
+        0.06718762886598643,
+        3.7941744444444745
+      ],
+      "nodes": [
+        0,
+        15602
+      ],
+      "rollouts": [
+        0,
+        2010
+      ],
+      "branching": [
+        3.329896907216495,
+        2.2333333333333334
+      ],
+      "safeLandings": [
+        27,
+        14
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            41,
+            23,
+            22,
+            45
+          ],
+          [
+            48,
+            48,
+            48,
+            48
+          ]
+        ],
+        "turn": 1,
+        "roll": null,
+        "lastRoll": 2,
+        "shells": [
+          false,
+          true,
+          true,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 1515092126,
+        "seed": 1854196214,
+        "turns": 194,
+        "captures": [
+          1,
+          6
+        ],
+        "terminal": 1
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "montecarlo",
+          "label": "Monte Carlo rollouts",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "random",
+          "label": "Random",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Monte Carlo rollouts",
+      "unfinished": false,
+      "turns": 151,
+      "captures": [
+        5,
+        0
+      ],
+      "completed": [
+        4,
+        0
+      ],
+      "decisions": [
+        78,
+        72
+      ],
+      "latencyMs": [
+        5.405930769230794,
+        0.06278472222221707
+      ],
+      "nodes": [
+        17488,
+        0
+      ],
+      "rollouts": [
+        2240,
+        0
+      ],
+      "branching": [
+        2.871794871794872,
+        2.888888888888889
+      ],
+      "safeLandings": [
+        18,
+        19
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            33,
+            17,
+            35,
+            -1
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 2,
+        "shells": [
+          false,
+          false,
+          true,
+          true
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 18384898,
+        "seed": 1854196214,
+        "turns": 151,
+        "captures": [
+          5,
+          0
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "random",
+          "label": "Random",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "montecarlo",
+          "label": "Monte Carlo rollouts",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 1,
+      "winnerPolicy": "Monte Carlo rollouts",
+      "unfinished": false,
+      "turns": 279,
+      "captures": [
+        3,
+        9
+      ],
+      "completed": [
+        2,
+        4
+      ],
+      "decisions": [
+        126,
+        130
+      ],
+      "latencyMs": [
+        0.07016825396828161,
+        4.082098461538439
+      ],
+      "nodes": [
+        0,
+        23818
+      ],
+      "rollouts": [
+        0,
+        3100
+      ],
+      "branching": [
+        2.388888888888889,
+        2.3846153846153846
+      ],
+      "safeLandings": [
+        23,
+        28
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            18,
+            31
+          ],
+          [
+            48,
+            48,
+            48,
+            48
+          ]
+        ],
+        "turn": 1,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          false,
+          true,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 2016886839,
+        "seed": 2393872427,
+        "turns": 279,
+        "captures": [
+          3,
+          9
+        ],
+        "terminal": 1
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "montecarlo",
+          "label": "Monte Carlo rollouts",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "random",
+          "label": "Random",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Monte Carlo rollouts",
+      "unfinished": false,
+      "turns": 208,
+      "captures": [
+        5,
+        2
+      ],
+      "completed": [
+        4,
+        2
+      ],
+      "decisions": [
+        96,
+        92
+      ],
+      "latencyMs": [
+        4.66395416666667,
+        0.06031956521738503
+      ],
+      "nodes": [
+        19088,
+        0
+      ],
+      "rollouts": [
+        2530,
+        0
+      ],
+      "branching": [
+        2.6354166666666665,
+        2.4347826086956523
+      ],
+      "safeLandings": [
+        20,
+        18
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            11,
+            48,
+            0,
+            48
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          false,
+          true,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 1543238763,
+        "seed": 2393872427,
+        "turns": 208,
+        "captures": [
+          5,
+          2
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "heuristic",
+          "label": "Weighted heuristic",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "risk",
+          "label": "Probability-aware",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Weighted heuristic",
+      "unfinished": false,
+      "turns": 234,
+      "captures": [
+        5,
+        4
+      ],
+      "completed": [
+        4,
+        3
+      ],
+      "decisions": [
+        118,
+        113
+      ],
+      "latencyMs": [
+        0.1267999999999798,
+        0.14876814159293017
+      ],
+      "nodes": [
+        0,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.6779661016949152,
+        2.327433628318584
+      ],
+      "safeLandings": [
+        30,
+        31
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            48,
+            48,
+            11,
+            48
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 2,
+        "shells": [
+          false,
+          true,
+          true,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 2507846078,
+        "seed": 1854196214,
+        "turns": 234,
+        "captures": [
+          5,
+          4
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "risk",
+          "label": "Probability-aware",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "heuristic",
+          "label": "Weighted heuristic",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Probability-aware",
+      "unfinished": false,
+      "turns": 273,
+      "captures": [
+        11,
+        6
+      ],
+      "completed": [
+        4,
+        3
+      ],
+      "decisions": [
+        126,
+        127
+      ],
+      "latencyMs": [
+        0.12238571428571006,
+        0.13230314960634046
+      ],
+      "nodes": [
+        0,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.5634920634920637,
+        2.748031496062992
+      ],
+      "safeLandings": [
+        33,
+        35
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            48,
+            13,
+            48,
+            48
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 2,
+        "shells": [
+          true,
+          false,
+          true,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 469304074,
+        "seed": 1854196214,
+        "turns": 273,
+        "captures": [
+          11,
+          6
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "heuristic",
+          "label": "Weighted heuristic",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "risk",
+          "label": "Probability-aware",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 1,
+      "winnerPolicy": "Probability-aware",
+      "unfinished": false,
+      "turns": 236,
+      "captures": [
+        3,
+        9
+      ],
+      "completed": [
+        1,
+        4
+      ],
+      "decisions": [
+        115,
+        110
+      ],
+      "latencyMs": [
+        0.1468852173912914,
+        0.0874863636363526
+      ],
+      "nodes": [
+        0,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        3.208695652173913,
+        2.209090909090909
+      ],
+      "safeLandings": [
+        30,
+        25
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            17,
+            12,
+            19
+          ],
+          [
+            48,
+            48,
+            48,
+            48
+          ]
+        ],
+        "turn": 1,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          true,
+          false,
+          false,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 520179611,
+        "seed": 2393872427,
+        "turns": 236,
+        "captures": [
+          3,
+          9
+        ],
+        "terminal": 1
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "risk",
+          "label": "Probability-aware",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "heuristic",
+          "label": "Weighted heuristic",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Probability-aware",
+      "unfinished": false,
+      "turns": 218,
+      "captures": [
+        5,
+        3
+      ],
+      "completed": [
+        4,
+        1
+      ],
+      "decisions": [
+        108,
+        98
+      ],
+      "latencyMs": [
+        0.09101851851849257,
+        0.13536734693887373
+      ],
+      "nodes": [
+        0,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.5,
+        2.7857142857142856
+      ],
+      "safeLandings": [
+        24,
+        26
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            40,
+            48,
+            39,
+            12
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          true,
+          false,
+          false,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 1791427251,
+        "seed": 2393872427,
+        "turns": 218,
+        "captures": [
+          5,
+          3
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "heuristic",
+          "label": "Weighted heuristic",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "expectiminimax",
+          "label": "Expectiminimax",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Weighted heuristic",
+      "unfinished": false,
+      "turns": 272,
+      "captures": [
+        6,
+        6
+      ],
+      "completed": [
+        4,
+        3
+      ],
+      "decisions": [
+        135,
+        126
+      ],
+      "latencyMs": [
+        0.09615481481479138,
+        1.6465944444445042
+      ],
+      "nodes": [
+        0,
+        7080
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        3.3185185185185184,
+        2.388888888888889
+      ],
+      "safeLandings": [
+        31,
+        28
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            48,
+            48,
+            48,
+            16
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          true,
+          false,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 1732975414,
+        "seed": 1854196214,
+        "turns": 272,
+        "captures": [
+          6,
+          6
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "expectiminimax",
+          "label": "Expectiminimax",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "heuristic",
+          "label": "Weighted heuristic",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Expectiminimax",
+      "unfinished": false,
+      "turns": 246,
+      "captures": [
+        11,
+        4
+      ],
+      "completed": [
+        4,
+        1
+      ],
+      "decisions": [
+        113,
+        115
+      ],
+      "latencyMs": [
+        1.8851840707964311,
+        0.11314695652177445
+      ],
+      "nodes": [
+        7336,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.84070796460177,
+        3.4956521739130433
+      ],
+      "safeLandings": [
+        26,
+        27
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            48,
+            40,
+            9,
+            12
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          false,
+          true,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 228691886,
+        "seed": 1854196214,
+        "turns": 246,
+        "captures": [
+          11,
+          4
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "heuristic",
+          "label": "Weighted heuristic",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "expectiminimax",
+          "label": "Expectiminimax",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 1,
+      "winnerPolicy": "Expectiminimax",
+      "unfinished": false,
+      "turns": 233,
+      "captures": [
+        3,
+        8
+      ],
+      "completed": [
+        2,
+        4
+      ],
+      "decisions": [
+        117,
+        109
+      ],
+      "latencyMs": [
+        0.09815811965807712,
+        1.132267889908214
+      ],
+      "nodes": [
+        0,
+        5122
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        3.3504273504273505,
+        2.0642201834862384
+      ],
+      "safeLandings": [
+        24,
+        22
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            -1,
+            24
+          ],
+          [
+            48,
+            48,
+            48,
+            48
+          ]
+        ],
+        "turn": 1,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          false,
+          true,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 16226335,
+        "seed": 2393872427,
+        "turns": 233,
+        "captures": [
+          3,
+          8
+        ],
+        "terminal": 1
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "expectiminimax",
+          "label": "Expectiminimax",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "heuristic",
+          "label": "Weighted heuristic",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Expectiminimax",
+      "unfinished": false,
+      "turns": 211,
+      "captures": [
+        7,
+        2
+      ],
+      "completed": [
+        4,
+        1
+      ],
+      "decisions": [
+        103,
+        96
+      ],
+      "latencyMs": [
+        1.342190291262182,
+        0.08247499999998809
+      ],
+      "nodes": [
+        6176,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.7281553398058254,
+        3.3020833333333335
+      ],
+      "safeLandings": [
+        18,
+        24
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            48,
+            -1,
+            6,
+            6
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 4,
+        "shells": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 2047192039,
+        "seed": 2393872427,
+        "turns": 211,
+        "captures": [
+          7,
+          2
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "heuristic",
+          "label": "Weighted heuristic",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "montecarlo",
+          "label": "Monte Carlo rollouts",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 1,
+      "winnerPolicy": "Monte Carlo rollouts",
+      "unfinished": false,
+      "turns": 224,
+      "captures": [
+        6,
+        7
+      ],
+      "completed": [
+        0,
+        4
+      ],
+      "decisions": [
+        109,
+        110
+      ],
+      "latencyMs": [
+        0.10162752293577262,
+        5.356962727272772
+      ],
+      "nodes": [
+        0,
+        20823
+      ],
+      "rollouts": [
+        0,
+        2640
+      ],
+      "branching": [
+        3.5779816513761467,
+        2.4
+      ],
+      "safeLandings": [
+        37,
+        27
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            38,
+            14,
+            0,
+            38
+          ],
+          [
+            48,
+            48,
+            48,
+            48
+          ]
+        ],
+        "turn": 1,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          false,
+          false,
+          true
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 2259657590,
+        "seed": 1854196214,
+        "turns": 224,
+        "captures": [
+          6,
+          7
+        ],
+        "terminal": 1
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "montecarlo",
+          "label": "Monte Carlo rollouts",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "heuristic",
+          "label": "Weighted heuristic",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 1,
+      "winnerPolicy": "Weighted heuristic",
+      "unfinished": false,
+      "turns": 222,
+      "captures": [
+        5,
+        7
+      ],
+      "completed": [
+        3,
+        4
+      ],
+      "decisions": [
+        110,
+        96
+      ],
+      "latencyMs": [
+        5.625892727272722,
+        0.06962916666668661
+      ],
+      "nodes": [
+        26056,
+        0
+      ],
+      "rollouts": [
+        3490,
+        0
+      ],
+      "branching": [
+        3.172727272727273,
+        2.3125
+      ],
+      "safeLandings": [
+        33,
+        18
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            46,
+            48
+          ],
+          [
+            48,
+            48,
+            48,
+            48
+          ]
+        ],
+        "turn": 1,
+        "roll": null,
+        "lastRoll": 2,
+        "shells": [
+          false,
+          true,
+          true,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 492032974,
+        "seed": 1854196214,
+        "turns": 222,
+        "captures": [
+          5,
+          7
+        ],
+        "terminal": 1
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "heuristic",
+          "label": "Weighted heuristic",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "montecarlo",
+          "label": "Monte Carlo rollouts",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Weighted heuristic",
+      "unfinished": false,
+      "turns": 246,
+      "captures": [
+        8,
+        5
+      ],
+      "completed": [
+        4,
+        2
+      ],
+      "decisions": [
+        125,
+        111
+      ],
+      "latencyMs": [
+        0.10206400000002759,
+        4.972056756756796
+      ],
+      "nodes": [
+        0,
+        19237
+      ],
+      "rollouts": [
+        0,
+        2470
+      ],
+      "branching": [
+        3.032,
+        2.225225225225225
+      ],
+      "safeLandings": [
+        29,
+        30
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            48,
+            9,
+            48,
+            9
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 2,
+        "shells": [
+          true,
+          false,
+          true,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 768368099,
+        "seed": 2393872427,
+        "turns": 246,
+        "captures": [
+          8,
+          5
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "montecarlo",
+          "label": "Monte Carlo rollouts",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "heuristic",
+          "label": "Weighted heuristic",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Monte Carlo rollouts",
+      "unfinished": false,
+      "turns": 199,
+      "captures": [
+        6,
+        4
+      ],
+      "completed": [
+        4,
+        1
+      ],
+      "decisions": [
+        100,
+        92
+      ],
+      "latencyMs": [
+        6.466702000000059,
+        0.08001847826067601
+      ],
+      "nodes": [
+        23610,
+        0
+      ],
+      "rollouts": [
+        3030,
+        0
+      ],
+      "branching": [
+        3.03,
+        2.6956521739130435
+      ],
+      "safeLandings": [
+        24,
+        25
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            48,
+            40,
+            16,
+            0
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 2,
+        "shells": [
+          true,
+          false,
+          false,
+          true
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 31378935,
+        "seed": 2393872427,
+        "turns": 199,
+        "captures": [
+          6,
+          4
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "risk",
+          "label": "Probability-aware",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "expectiminimax",
+          "label": "Expectiminimax",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 1,
+      "winnerPolicy": "Expectiminimax",
+      "unfinished": false,
+      "turns": 272,
+      "captures": [
+        10,
+        10
+      ],
+      "completed": [
+        2,
+        4
+      ],
+      "decisions": [
+        126,
+        136
+      ],
+      "latencyMs": [
+        0.08135793650806245,
+        1.352536764705907
+      ],
+      "nodes": [
+        0,
+        7479
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        3.007936507936508,
+        2.7794117647058822
+      ],
+      "safeLandings": [
+        39,
+        41
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            8,
+            0
+          ],
+          [
+            48,
+            48,
+            48,
+            48
+          ]
+        ],
+        "turn": 1,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          true,
+          false,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 1732975414,
+        "seed": 1854196214,
+        "turns": 272,
+        "captures": [
+          10,
+          10
+        ],
+        "terminal": 1
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "expectiminimax",
+          "label": "Expectiminimax",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "risk",
+          "label": "Probability-aware",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Expectiminimax",
+      "unfinished": false,
+      "turns": 237,
+      "captures": [
+        7,
+        4
+      ],
+      "completed": [
+        4,
+        3
+      ],
+      "decisions": [
+        114,
+        111
+      ],
+      "latencyMs": [
+        1.3091964912281375,
+        0.07885405405413785
+      ],
+      "nodes": [
+        6076,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.710526315789474,
+        2.6036036036036037
+      ],
+      "safeLandings": [
+        25,
+        28
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            48,
+            48,
+            48,
+            0
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 3,
+        "shells": [
+          true,
+          true,
+          true,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 3011799354,
+        "seed": 1854196214,
+        "turns": 237,
+        "captures": [
+          7,
+          4
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "risk",
+          "label": "Probability-aware",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "expectiminimax",
+          "label": "Expectiminimax",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 1,
+      "winnerPolicy": "Expectiminimax",
+      "unfinished": false,
+      "turns": 188,
+      "captures": [
+        2,
+        7
+      ],
+      "completed": [
+        1,
+        4
+      ],
+      "decisions": [
+        80,
+        86
+      ],
+      "latencyMs": [
+        0.07426374999986365,
+        1.2597116279069502
+      ],
+      "nodes": [
+        0,
+        4587
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.85,
+        2.697674418604651
+      ],
+      "safeLandings": [
+        21,
+        20
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            36,
+            0,
+            0
+          ],
+          [
+            48,
+            48,
+            48,
+            48
+          ]
+        ],
+        "turn": 1,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          false,
+          false,
+          true
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 1046861787,
+        "seed": 2393872427,
+        "turns": 188,
+        "captures": [
+          2,
+          7
+        ],
+        "terminal": 1
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "expectiminimax",
+          "label": "Expectiminimax",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "risk",
+          "label": "Probability-aware",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Expectiminimax",
+      "unfinished": false,
+      "turns": 154,
+      "captures": [
+        3,
+        0
+      ],
+      "completed": [
+        4,
+        1
+      ],
+      "decisions": [
+        79,
+        66
+      ],
+      "latencyMs": [
+        1.3759734177216114,
+        0.08321515151529832
+      ],
+      "nodes": [
+        4710,
+        0
+      ],
+      "rollouts": [
+        0,
+        0
+      ],
+      "branching": [
+        2.949367088607595,
+        2.772727272727273
+      ],
+      "safeLandings": [
+        18,
+        15
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            26,
+            48,
+            7,
+            0
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 2,
+        "shells": [
+          true,
+          true,
+          false,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 1062014387,
+        "seed": 2393872427,
+        "turns": 154,
+        "captures": [
+          3,
+          0
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "risk",
+          "label": "Probability-aware",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "montecarlo",
+          "label": "Monte Carlo rollouts",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Probability-aware",
+      "unfinished": false,
+      "turns": 185,
+      "captures": [
+        7,
+        2
+      ],
+      "completed": [
+        4,
+        1
+      ],
+      "decisions": [
+        90,
+        88
+      ],
+      "latencyMs": [
+        0.0645144444443051,
+        5.98653636363625
+      ],
+      "nodes": [
+        0,
+        22324
+      ],
+      "rollouts": [
+        0,
+        2930
+      ],
+      "branching": [
+        2.566666666666667,
+        3.3295454545454546
+      ],
+      "safeLandings": [
+        20,
+        24
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            15,
+            48,
+            11,
+            10
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          true,
+          false,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 3232298,
+        "seed": 1854196214,
+        "turns": 185,
+        "captures": [
+          7,
+          2
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "montecarlo",
+          "label": "Monte Carlo rollouts",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "risk",
+          "label": "Probability-aware",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 1,
+      "winnerPolicy": "Probability-aware",
+      "unfinished": false,
+      "turns": 222,
+      "captures": [
+        7,
+        5
+      ],
+      "completed": [
+        2,
+        4
+      ],
+      "decisions": [
+        107,
+        114
+      ],
+      "latencyMs": [
+        5.287966355140142,
+        0.060835964912241663
+      ],
+      "nodes": [
+        26521,
+        0
+      ],
+      "rollouts": [
+        3380,
+        0
+      ],
+      "branching": [
+        3.1588785046728973,
+        2.43859649122807
+      ],
+      "safeLandings": [
+        29,
+        23
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            47,
+            30,
+            48,
+            48
+          ],
+          [
+            48,
+            48,
+            48,
+            48
+          ]
+        ],
+        "turn": 1,
+        "roll": null,
+        "lastRoll": 2,
+        "shells": [
+          false,
+          true,
+          true,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 492032974,
+        "seed": 1854196214,
+        "turns": 222,
+        "captures": [
+          7,
+          5
+        ],
+        "terminal": 1
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "risk",
+          "label": "Probability-aware",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "montecarlo",
+          "label": "Monte Carlo rollouts",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Probability-aware",
+      "unfinished": false,
+      "turns": 234,
+      "captures": [
+        8,
+        2
+      ],
+      "completed": [
+        4,
+        2
+      ],
+      "decisions": [
+        109,
+        111
+      ],
+      "latencyMs": [
+        0.07481192660547628,
+        5.12484594594597
+      ],
+      "nodes": [
+        0,
+        26571
+      ],
+      "rollouts": [
+        0,
+        3530
+      ],
+      "branching": [
+        2.853211009174312,
+        3.18018018018018
+      ],
+      "safeLandings": [
+        22,
+        28
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            48,
+            14,
+            48,
+            18
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          false,
+          true,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 3047522291,
+        "seed": 2393872427,
+        "turns": 234,
+        "captures": [
+          8,
+          2
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "montecarlo",
+          "label": "Monte Carlo rollouts",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "risk",
+          "label": "Probability-aware",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Monte Carlo rollouts",
+      "unfinished": false,
+      "turns": 266,
+      "captures": [
+        7,
+        7
+      ],
+      "completed": [
+        4,
+        3
+      ],
+      "decisions": [
+        128,
+        120
+      ],
+      "latencyMs": [
+        3.822957812500121,
+        0.047623333333300856
+      ],
+      "nodes": [
+        23929,
+        0
+      ],
+      "rollouts": [
+        3180,
+        0
+      ],
+      "branching": [
+        2.484375,
+        2.2083333333333335
+      ],
+      "safeLandings": [
+        31,
+        26
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            48,
+            48,
+            48,
+            41
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 1,
+        "shells": [
+          false,
+          false,
+          true,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 1264745075,
+        "seed": 2393872427,
+        "turns": 266,
+        "captures": [
+          7,
+          7
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "expectiminimax",
+          "label": "Expectiminimax",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "montecarlo",
+          "label": "Monte Carlo rollouts",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Expectiminimax",
+      "unfinished": false,
+      "turns": 218,
+      "captures": [
+        6,
+        2
+      ],
+      "completed": [
+        4,
+        2
+      ],
+      "decisions": [
+        107,
+        101
+      ],
+      "latencyMs": [
+        1.4211915887850903,
+        5.069895049504807
+      ],
+      "nodes": [
+        6998,
+        22010
+      ],
+      "rollouts": [
+        0,
+        2970
+      ],
+      "branching": [
+        3.0093457943925235,
+        2.9405940594059405
+      ],
+      "safeLandings": [
+        24,
+        25
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            40,
+            48,
+            48,
+            22
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 3,
+        "shells": [
+          true,
+          true,
+          true,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 1251751038,
+        "seed": 1854196214,
+        "turns": 218,
+        "captures": [
+          6,
+          2
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 1854196214,
+      "seedInput": "2023:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "montecarlo",
+          "label": "Monte Carlo rollouts",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "expectiminimax",
+          "label": "Expectiminimax",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Monte Carlo rollouts",
+      "unfinished": false,
+      "turns": 196,
+      "captures": [
+        6,
+        3
+      ],
+      "completed": [
+        4,
+        1
+      ],
+      "decisions": [
+        99,
+        95
+      ],
+      "latencyMs": [
+        6.09122828282823,
+        1.4125052631578958
+      ],
+      "nodes": [
+        22756,
+        5856
+      ],
+      "rollouts": [
+        2920,
+        0
+      ],
+      "branching": [
+        2.9494949494949494,
+        2.873684210526316
+      ],
+      "safeLandings": [
+        27,
+        22
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            12,
+            24,
+            48,
+            34
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 2,
+        "shells": [
+          true,
+          true,
+          false,
+          false
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 3282716742,
+        "seed": 1854196214,
+        "turns": 196,
+        "captures": [
+          6,
+          3
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "expectiminimax",
+          "label": "Expectiminimax",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "montecarlo",
+          "label": "Monte Carlo rollouts",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 0,
+      "winnerPolicy": "Expectiminimax",
+      "unfinished": false,
+      "turns": 180,
+      "captures": [
+        4,
+        1
+      ],
+      "completed": [
+        4,
+        2
+      ],
+      "decisions": [
+        93,
+        76
+      ],
+      "latencyMs": [
+        0.9332935483870769,
+        3.171111842105371
+      ],
+      "nodes": [
+        4969,
+        10876
+      ],
+      "rollouts": [
+        0,
+        1410
+      ],
+      "branching": [
+        3.139784946236559,
+        1.855263157894737
+      ],
+      "safeLandings": [
+        23,
+        19
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            48,
+            48,
+            48
+          ],
+          [
+            5,
+            48,
+            48,
+            29
+          ]
+        ],
+        "turn": 0,
+        "roll": null,
+        "lastRoll": 2,
+        "shells": [
+          false,
+          true,
+          false,
+          true
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 2566297915,
+        "seed": 2393872427,
+        "turns": 180,
+        "captures": [
+          4,
+          1
+        ],
+        "terminal": 0
+      }
+    },
+    {
+      "seed": 2393872427,
+      "seedInput": "2024:0",
+      "environment": "spiral-7-v1",
+      "policies": [
+        {
+          "id": "montecarlo",
+          "label": "Monte Carlo rollouts",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        },
+        {
+          "id": "expectiminimax",
+          "label": "Expectiminimax",
+          "config": {
+            "depth": 2,
+            "budget": 10,
+            "horizon": 8,
+            "maxNodes": 20000,
+            "weights": {
+              "progress": 24,
+              "capture": 90,
+              "safety": 12,
+              "completion": 180,
+              "entry": 18,
+              "risk": -70,
+              "mobility": 10,
+              "bonus": 8
+            }
+          }
+        }
+      ],
+      "entry": [
+        1,
+        8
+      ],
+      "maxTurns": 300,
+      "winner": 1,
+      "winnerPolicy": "Expectiminimax",
+      "unfinished": false,
+      "turns": 168,
+      "captures": [
+        0,
+        6
+      ],
+      "completed": [
+        2,
+        4
+      ],
+      "decisions": [
+        73,
+        78
+      ],
+      "latencyMs": [
+        4.072928767123265,
+        0.8542935897437182
+      ],
+      "nodes": [
+        12505,
+        3694
+      ],
+      "rollouts": [
+        1650,
+        0
+      ],
+      "branching": [
+        2.26027397260274,
+        2.6923076923076925
+      ],
+      "safeLandings": [
+        18,
+        14
+      ],
+      "searchTruncations": [
+        0,
+        0
+      ],
+      "finalState": {
+        "version": "spiral-7-v1",
+        "pieces": [
+          [
+            48,
+            3,
+            48,
+            -1
+          ],
+          [
+            48,
+            48,
+            48,
+            48
+          ]
+        ],
+        "turn": 1,
+        "roll": null,
+        "lastRoll": 3,
+        "shells": [
+          true,
+          true,
+          false,
+          true
+        ],
+        "entry": [
+          1,
+          8
+        ],
+        "rng": 550484811,
+        "seed": 2393872427,
+        "turns": 168,
+        "captures": [
+          0,
+          6
+        ],
+        "terminal": 1
+      }
+    }
+  ],
+  "summary": [
+    {
+      "policy": "Random",
+      "games": 16,
+      "wins": 2,
+      "losses": 13,
+      "unfinished": 1,
+      "winRate": 0.125,
+      "winCI": [
+        0.034976749337057134,
+        0.3602333143674828
+      ],
+      "meanTurns": 200.6875,
+      "decisionLatencyMs": 0.0886266447368462,
+      "capturesPerGame": 2.25,
+      "completedPieces": 1.125,
+      "safeLandingRate": 0.22302631578947368,
+      "branching": 2.6361842105263156,
+      "nodesPerDecision": 0,
+      "seedWinRateSD": 0
+    },
+    {
+      "policy": "Weighted heuristic",
+      "games": 16,
+      "wins": 5,
+      "losses": 10,
+      "unfinished": 1,
+      "winRate": 0.3125,
+      "winCI": [
+        0.14164435051961052,
+        0.5559606813326594
+      ],
+      "meanTurns": 232.625,
+      "decisionLatencyMs": 0.11503137697516654,
+      "capturesPerGame": 5,
+      "completedPieces": 2.3125,
+      "safeLandingRate": 0.24548532731376976,
+      "branching": 3.0062076749435667,
+      "nodesPerDecision": 0,
+      "seedWinRateSD": 0.08838834764831845
+    },
+    {
+      "policy": "Probability-aware",
+      "games": 16,
+      "wins": 10,
+      "losses": 6,
+      "unfinished": 0,
+      "winRate": 0.625,
+      "winCI": [
+        0.3864064709793481,
+        0.815190174452472
+      ],
+      "meanTurns": 216.5625,
+      "decisionLatencyMs": 0.088926838235293,
+      "capturesPerGame": 6.5625,
+      "completedPieces": 3.3125,
+      "safeLandingRate": 0.23897058823529413,
+      "branching": 2.579044117647059,
+      "nodesPerDecision": 0,
+      "seedWinRateSD": 0
+    },
+    {
+      "policy": "Expectiminimax",
+      "games": 16,
+      "wins": 14,
+      "losses": 2,
+      "unfinished": 0,
+      "winRate": 0.875,
+      "winCI": [
+        0.6397666856325173,
+        0.9650232506629428
+      ],
+      "meanTurns": 206.25,
+      "decisionLatencyMs": 1.2745140977443838,
+      "capturesPerGame": 6.1875,
+      "completedPieces": 3.75,
+      "safeLandingRate": 0.2224310776942356,
+      "branching": 2.723684210526316,
+      "nodesPerDecision": 55.37844611528822,
+      "seedWinRateSD": 0.1767766952966369
+    },
+    {
+      "policy": "Monte Carlo rollouts",
+      "games": 16,
+      "wins": 8,
+      "losses": 8,
+      "unfinished": 0,
+      "winRate": 0.5,
+      "winCI": [
+        0.2799923761135083,
+        0.7200076238864916
+      ],
+      "meanTurns": 212,
+      "decisionLatencyMs": 4.945570087064681,
+      "capturesPerGame": 4.6875,
+      "completedPieces": 3,
+      "safeLandingRate": 0.24564676616915423,
+      "branching": 2.7039800995024876,
+      "nodesPerDecision": 207.2226368159204,
+      "seedWinRateSD": 0
+    }
+  ],
+  "firstPlayerWinRate": 0.625,
+  "unfinished": 1,
+  "elapsedMs": 13320.3728,
+  "notes": "Win rates include unfinished games in the denominator. Wilson intervals are descriptive game-level intervals; swapped games share seeds. Seed variability is reported separately."
+}

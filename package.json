@@ -1,0 +1,12 @@
+{
+  "name": "stochastic-decision-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Seeded stochastic game engine, five decision policies and reproducible evaluation",
+  "scripts": {
+    "test": "node --test",
+    "experiments": "node scripts/experiments.cjs",
+    "report": "node scripts/report.cjs",
+    "start": "node scripts/serve.cjs"
+  }
+}
